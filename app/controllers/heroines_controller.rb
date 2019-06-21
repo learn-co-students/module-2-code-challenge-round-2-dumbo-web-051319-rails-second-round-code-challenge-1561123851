@@ -1,6 +1,6 @@
 class HeroinesController < ApplicationController
   def index
-    @heroines = Heroine.all
+    @heroines = Heroine.search(params[:search])
   end
 
   def show
@@ -12,20 +12,18 @@ class HeroinesController < ApplicationController
   end
 
   def create
-    @heroine = Heroine.create(heroine_params)
-    redirect_to @heroine
-    # @heroine = Heroine.new(heroine_params)
-    # if @heroine.valid?
-    #   @heroine.save
-    #   redirect_to @heroine
-    # else
-    #   flash[:errors] = "Name must be unique"
-    # end
+    @heroine = Heroine.new(heroine_params)
+    if @heroine.valid?
+      @heroine.save
+      redirect_to @heroine
+    else
+      redirect_to new_heroine_path
+    end
   end
 
   private
 
   def heroine_params
-    params.require(:heroine).permit(:name, :super_name, :power_id)
+    params.require(:heroine).permit(:name, :super_name, :power_id, :search)
   end
 end
