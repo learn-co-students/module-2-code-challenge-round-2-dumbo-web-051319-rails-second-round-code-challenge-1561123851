@@ -1,0 +1,14 @@
+<h1>Heroines Show Page</h1>  
+
+
+name:<%=@herione.name %>
+<br>
+supername:<%=@herione.super_name %>
+<br>
+heriones_power: <%= link_to @herione.power.name, power_path(@herione.power) %>
+
+<!-- 
+
+3. The heroine show page should include the heroine's name 
+(eg. Kamala Khan), her super name (eg. Ms. Marvel), and her power. 
+The power should link to the power show page.   -->
