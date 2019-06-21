@@ -1,5 +1,13 @@
 class PowersController < ApplicationController
   def index
-    @powers = Power.all
+    @heroine = Heroine.search(params[:search])
+    @heroines = Heroine.all
+
+
   end
+def show
+    @power = Power.find(params[:id])
+
+end
+
 end

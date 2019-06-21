@@ -1,0 +1,19 @@
+<h1>Here is more info about your hero!</h1>
+<ul>
+
+  <li>
+<%= @heroine.name %>
+</li>
+<li>
+<%= @heroine.super_name %>
+</li>
+<li>
+  <%=link_to @heroine.power.name, "/powers/#{@heroine.power.id}" %>
+
+</li>
+
+
+</ul>
+
+
+<!-- link_to power_path(@heroine.power.id) -->
