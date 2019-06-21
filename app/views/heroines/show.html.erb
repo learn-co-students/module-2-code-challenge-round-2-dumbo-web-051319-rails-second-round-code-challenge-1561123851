@@ -1,0 +1,9 @@
+<h1><%= @heroine.name%>'s power!!</h1>
+
+<ul>
+  <ol>
+    <h2>Heroine's name</h2><%= @heroine.name%>
+    <h2>Heroine's supername</h2><%= @heroine.super_name%>
+    <h2>Heroine's power</h2><%= link_to @heroine.power.name, power_path(@heroine.power_id)%>
+  </ol>
+</ul>
